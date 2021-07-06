@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(195, 201, 160);
+}
+div.card-footer {
+    margin: 0;
+}
+div.card-header {
+    margin-top: 0;
+}
+div.container {
+    border: 1px solid rgb(120, 120, 120);
+    background-color: white;
+    border-radius: 10%;
+    padding: 3rem;
+    margin: 7rem auto;
+    width: 40rem;
+    max-width: 70%;
+    flex: inherit;
+}
+div.form-group{
+    margin-bottom: 1rem;
+}
+button.first {
+    border: none;
+}
+button.second {
+    margin-left: 1em;
+    background-color: rgb(226, 15, 15);
+    border: none;
+}
+div#last {
+    margin-top: 1rem;
+}
+label {
+    margin: none;
+}

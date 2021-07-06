@@ -1,0 +1,27 @@
+<div class="login-wapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 font-weight-normal" dir="rtl">ברוך הבא</h1>
+                <!--<label for="inputUsername" class="sr-only">Username</label>-->
+                <input type="username" id="inputUsername" name="username" class="form-control" placeholder="Username"
+                    required autofocus ngModel #username="ngModel">
+                <!--<label for="inputPassword" class="sr-only">Password </label>-->
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+                    required ngModel #password="ngModel">
+                <button class="btn btn-lg btn-primary btn-block" [disabled]="signInForm.invalid"
+                    type="submit">כניסה</button>
+
+                <!--<div *ngIf="username.touched && username.valid" class="alert alert-danger">
+                    <div *ngIf="username.errors.required">Name field is required</div>
+                </div>-->
+                <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                    Please fill all fields
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid" dir="rtl">
+                    אינך מורשה
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

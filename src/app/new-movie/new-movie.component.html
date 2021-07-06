@@ -1,0 +1,48 @@
+<body>
+    <div class="card-header"></div>
+    <div class="container">
+        <form #f="ngForm" (ngSubmit)="submit(f.value)">
+            <div class="form-group" dir="rtl">
+                <label for="name" die="rtl">שם הסרט</label>
+                <input required maxlength="30" ngModel name="name" #name="ngModel" type="text" id="name"
+                    class="form-control">
+                <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">יש להזין את שם הסרט</div>
+                </div>
+            </div>
+            <div class=" form-group" dir="rtl">
+                <label for="category">קטגוריה</label>
+                <select required ngModel name="category" #category="ngModel" id="category" class="form-control">
+                    <option value=""></option>
+                    <option *ngFor="let c of categories" [value]="c.id"> {{ c.name }}</option>
+                </select>
+                <div *ngIf="category.touched && category.invalid" class="alert alert-danger">יש לבחור קטגוריה</div>
+            </div>
+            <div class="form-group" dir="rtl">
+                <label for="name" die="rtl">לינק לאתר</label>
+                <input required ngModel name="'website'" #website="ngModel" type="text" id="website"
+                    class="form-control">
+            </div>
+            <div class="form-group" dir="rtl">
+                <label for="name" die="rtl">לינק לתמונה</label>
+                <input required ngModel name="image" #image="ngModel" type="text" id="image" class="form-control">
+            </div>
+
+            <button class="btn btn-primary" [disabled]="f.invalid">צור סרט</button>
+
+            <button class=" btn btn-primary second" (click)="goBack()">ביטול</button>
+
+            <div *ngIf="sameMovieName" class="alert alert-danger" id="last-1" dir="rtl">
+                סרט זה כבר קיים במערכת
+            </div>
+            <div *ngIf="wrongImdbUrl" class="alert alert-danger" id="last-2" dir="rtl">
+                ! כתובת לא חוקית
+            </div>
+            <div *ngIf="wrongImageUrl" class="alert alert-danger" id="last-3" dir="rtl">! מקור התמונה שגוי
+            </div>
+
+
+        </form>
+    </div>
+    <div class="card-footer"></div>
+</body>

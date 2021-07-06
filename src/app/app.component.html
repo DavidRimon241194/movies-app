@@ -1,0 +1,62 @@
+<!--  
+<signup-form></signup-form> 
+<new-course-form></new-course-form>
+<change-password>
+<posts></posts>
+</change-password> 
+
+<movies-app></movies-app>
+-->
+
+
+<div class="categories-summry" *ngIf="authenticationService.isAuthenticated">
+    <ul class="nav flex-column" style="float: right; padding-right: 0ch;">
+        <li class="nav-item display-2 first" dir="rtl" style="font-size:x-large; border-bottom: 2px solid black">
+            ברוך הבא <span dir="ltr">admin</span>
+        </li>
+        <li class="nav-item" dir="rtl">
+            <a class="nav-link" href="#" routerLink="/new-movie" dir="rtl">הוסף סרט</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/movies-app" dir="rtl">כל הקטגוריות</a>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/action-movies" dir="rtl">אקשן</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/comedy-movies" dir="rtl">קומדיה</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/drama-movies" dir="rtl">דרמה</a>
+        </li>
+        <li class="nav-item" dir="rtl">
+            <a class="nav-link" href="#" routerLink="/else-movies" dir="rtl">אחר</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" (click)="logout()" dir="rtl">התנתק</a>
+        </li>
+    </ul>
+</div>
+
+<!--
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large
+    modal</button>
+<button (click)="showModal()">
+    הוספת סרט חדש
+</button>
+<div class="modal fade bd-example-modal-lg" id=newMovieModal tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            lllllllllllllllll
+        </div>
+    </div>
+</div>
+-->
+
+
+<!-- Button trigger modal -->
+
+
+
+
+<router-outlet></router-outlet>
